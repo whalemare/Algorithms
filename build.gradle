@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'scala'
 }
 
 group 'ru.whalemare.'
@@ -12,5 +13,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.scala-lang:scala-library:2.11.12'
+    testImplementation 'org.scalatest:scalatest_2.11:3.0.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
