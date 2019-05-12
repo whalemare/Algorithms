@@ -79,6 +79,6 @@ class LinkedDequeScalaTest extends FlatSpec {
     linked.sort({ (left, right) =>
       left.compareTo(right)
     })
-    println(linked.toString)
+    println(linked.toString())
   }
 }

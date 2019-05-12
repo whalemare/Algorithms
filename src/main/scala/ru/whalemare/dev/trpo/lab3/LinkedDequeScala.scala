@@ -90,14 +90,14 @@ class LinkedDequeScala[Item] extends Iterable[Item] {
   }
 
   override def toString: String = {
-    val s = new StringBuilder
+    var s = ""
     var skipped = false
     for (item <- this) {
-      if (skipped) s + "->" + item
-      else s + item.toString
+      if (skipped) s = s + "->" + item
+      else s = s + item.toString
       skipped = true
     }
-    s.toString
+    s
   }
 
   private def sortedMerge(a: Node[Item], b: Node[Item], comparator: (Item, Item) => Int): Node[Item] = {
