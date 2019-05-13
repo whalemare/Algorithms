@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import ru.whalemare.dev.trpo.lab3.LinkedDequeScala;
 
 /**
  * @author Anton Vlasov - whalemare
@@ -30,7 +29,6 @@ public class LinkedDequeView {
     @FXML
     private TextArea textOutput;
 
-    private LinkedDequeScala<Integer> linkedDeque = new LinkedDequeScala<>();
 
     private int getValue() {
         return Integer.valueOf(editInput.getCharacters().toString());
@@ -39,25 +37,25 @@ public class LinkedDequeView {
     @FXML
     public void initialize() {
         buttonAddHead.setOnMouseClicked(event -> {
-            linkedDeque.addHead(getValue());
+//            linkedDeque.addHead(getValue());
             render();
         });
         buttonAddLast.setOnMouseClicked(event -> {
-            linkedDeque.addLast(getValue());
+//            linkedDeque.addLast(getValue());
             render();
         });
 
         buttonRemoveHead.setOnMouseClicked(event -> {
-            linkedDeque.removeHead();
+//            linkedDeque.removeHead();
             render();
         });
         buttonRemoveLast.setOnMouseClicked(event -> {
-            linkedDeque.removeLast();
+//            linkedDeque.removeLast();
             render();
         });
     }
 
     public void render() {
-        textOutput.setText(linkedDeque.toString());
+        textOutput.setText("");
     }
 }
