@@ -10,9 +10,9 @@ import javafx.stage.Stage;
  * @author Anton Vlasov - whalemare
  * @since 2019
  */
-public class ScalaView extends Application {
+public class MainScala extends Application {
 
-    public ScalaView() {
+    public MainScala() {
 
     }
 
@@ -23,7 +23,7 @@ public class ScalaView extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/scene-scala.fxml"));
-        primaryStage.setTitle("LinkedDequeScala");
+        primaryStage.setTitle("BinaryTreeViewScala");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
