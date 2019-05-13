@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ru.whalemare.dev.trpo.lab2.LinkedDequeView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.whalemare.dev.trpo.lab2.BinaryTreeView">
     <children>
-        <Button fx:id="buttonAddHead" layoutX="25.0" layoutY="244.0" mnemonicParsing="false" prefHeight="27.0"
-                prefWidth="86.0" text="Add Head"/>
-        <TextArea fx:id="textOutput" editable="false" layoutX="18.0" layoutY="31.0" prefHeight="126.0" prefWidth="554.0"
-                  wrapText="true"/>
-        <Button fx:id="buttonAddLast" layoutX="138.0" layoutY="245.0" mnemonicParsing="false" prefHeight="27.0"
-                prefWidth="90.0"
-                text="Add Last"/>
-        <Button fx:id="buttonRemoveHead" layoutX="443.0" layoutY="205.0" mnemonicParsing="false" prefHeight="27.0"
-                prefWidth="135.0"
-                text="Remove Head"/>
-        <Button fx:id="buttonRemoveLast" layoutX="444.0" layoutY="244.0" mnemonicParsing="false" prefHeight="27.0"
-                prefWidth="133.0"
-                text="Remove Last"/>
-        <TextField fx:id="editInput" layoutX="17.0" layoutY="205.0" prefHeight="27.0" prefWidth="182.0"/>
-        <Label layoutX="17.0" layoutY="180.0" prefHeight="17.0" prefWidth="94.0" text="Enter number:"/>
+        <Button fx:id="buttonAdd" layoutX="15.0" layoutY="595.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="86.0" text="Add" />
+        <TextArea fx:id="textOutput" editable="false" layoutX="15.0" layoutY="24.0" prefHeight="493.0" prefWidth="600.0" wrapText="true">
+         <font>
+            <Font size="12.0" />
+         </font></TextArea>
+        <Button fx:id="buttonRemove" layoutX="133.0" layoutY="595.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="135.0" text="Remove" />
+        <TextField fx:id="editInput" layoutX="14.0" layoutY="557.0" prefHeight="27.0" prefWidth="182.0" />
+        <Label layoutX="15.0" layoutY="531.0" prefHeight="17.0" prefWidth="94.0" text="Enter number:" />
     </children>
 </AnchorPane>

@@ -23,8 +23,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
-        primaryStage.setTitle("LinkedDequeView");
+        primaryStage.setTitle("BinaryTreeView");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMaximized(true);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 }
