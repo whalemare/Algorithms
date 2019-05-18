@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * @author Anton Vlasov - whalemare
+ * @author Mikhail Medvedev
  * @since 2019
  */
 public class Main extends Application {
