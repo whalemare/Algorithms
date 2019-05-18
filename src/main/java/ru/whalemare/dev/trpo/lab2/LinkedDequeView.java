@@ -4,15 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import ru.whalemare.dev.trpo.lab1.LinkedDeque;
-
-import java.util.concurrent.Callable;
 
 /**
- * @since 2019
  * @author Mikhail Medvedev
+ * @since 2019
  */
-public class LinkedDequeView {
+public class LinkedDequeView implements Controller.Renderable {
 
     @FXML
     private Button buttonAddHead;
@@ -35,7 +32,7 @@ public class LinkedDequeView {
     @FXML
     private TextArea textOutputInfo;
 
-    private LinkedDeque<Integer> linkedDeque = new LinkedDeque<>();
+    public static Controller controller;
 
     private int getValue() {
         return Integer.valueOf(editField.getCharacters().toString());
@@ -43,43 +40,26 @@ public class LinkedDequeView {
 
     @FXML
     public void initialize() {
+        controller.onRender(this);
+
         buttonAddHead.setOnMouseClicked(event -> {
-            linkedDeque.addHead(getValue());
-            render();
+            controller.onClickAddHead(getValue());
         });
         buttonAddLast.setOnMouseClicked(event -> {
-            linkedDeque.addLast(getValue());
-            render();
+            controller.onClickAddLast(getValue());
         });
 
         buttonRemoveHead.setOnMouseClicked(event -> {
-            linkedDeque.removeHead();
-            render();
+            controller.onClickRemoveHead(getValue());
         });
         buttonRemoveLast.setOnMouseClicked(event -> {
-            linkedDeque.removeLast();
-            render();
+            controller.onClickRemoveLast(getValue());
         });
     }
 
-    public void render() {
-        textOutput.setText(linkedDeque.toString());
-
-        int value = getValue();
-        textOutputInfo.setText(
-                "Список пуст: " + safe(() -> linkedDeque.isEmpty()) + "\n" +
-                "Начальный элемент: " + safe(() -> linkedDeque.peekHead()) + "\n" +
-                "Конечный элемент: " + safe(() -> linkedDeque.peekLast()) + "\n" +
-                "Индекс элемента [" + value + "]: " + safe(() -> linkedDeque.indexOf(value))
-        );
-    }
-
-    public <V> V safe(Callable<V> callable) {
-        try {
-            return callable.call();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    @Override
+    public void render(String main, String additional) {
+        textOutput.setText(main);
+        textOutputInfo.setText(additional);
     }
 }

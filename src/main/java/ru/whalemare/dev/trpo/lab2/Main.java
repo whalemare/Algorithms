@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import ru.whalemare.dev.trpo.lab4.JavaController;
 
 /**
  * @author Mikhail Medvedev
@@ -22,6 +23,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        LinkedDequeView.controller = new JavaController();
         Parent root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
         primaryStage.setTitle("LinkedDequeView");
         primaryStage.setScene(new Scene(root));

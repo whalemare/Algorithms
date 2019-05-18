@@ -5,10 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import ru.whalemare.dev.trpo.lab2.LinkedDequeView;
 
 /**
- * @author Anton Vlasov - whalemare
- * @since 2019
+ * @author Mikhail Medvedev
+* @since 2019
  */
 public class ScalaView extends Application {
 
@@ -22,7 +23,8 @@ public class ScalaView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/scene-scala.fxml"));
+        LinkedDequeView.controller = new ScalaController();
+        Parent root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
         primaryStage.setTitle("LinkedDequeScala");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
