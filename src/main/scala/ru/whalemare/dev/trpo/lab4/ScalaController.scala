@@ -2,38 +2,38 @@ package ru.whalemare.dev.trpo.lab4
 
 import ru.whalemare.dev.trpo.lab2.Controller
 import ru.whalemare.dev.trpo.lab2.Controller.Renderable
-import ru.whalemare.dev.trpo.lab3.LinkedDequeScala
+import ru.whalemare.dev.trpo.lab3.HeaderLinkedListScala
 
 
-class ScalaController extends Controller {
-  private val linkedDeque = new LinkedDequeScala[Integer]
+class ScalaController extends Controller[List[String]] {
+  private val linkedDeque = new HeaderLinkedListScala[String]
   private var renderable: Renderable = _
 
 
-  private def render(value: Int): Unit = {
+  private def render(value: List[String]): Unit = {
     renderable.render(linkedDeque.toString,
-      "Список пуст: " + linkedDeque.isEmpty + "\n"
-        + "Начальный элемент: " + safe(() => linkedDeque.peekHead) + "\n"
-        + "Конечный элемент: " + safe(() => linkedDeque.peekLast) + "\n"
-        + "Индекс элемента [" + value + "]: " + safe(() => linkedDeque.indexOf(value)))
+      "Пустой список: " + linkedDeque.isEmpty + "\n"
+        + "Первый список: " + safe(() => linkedDeque.peekHead) + "\n"
+        + "Последний список: " + safe(() => linkedDeque.peekLast) + "\n"
+        + "Индекс списка [" + value + "]: " + safe(() => linkedDeque.indexOf(value)))
   }
 
-  override def onClickAddHead(value: Int): Unit = {
+  override def onClickAddHead(value: List[String]): Unit = {
     linkedDeque.addHead(value)
     render(value)
   }
 
-  override def onClickAddLast(value: Int): Unit = {
+  override def onClickAddLast(value: List[String]): Unit = {
     linkedDeque.addLast(value)
     render(value)
   }
 
-  override def onClickRemoveHead(value: Int): Unit = {
+  override def onClickRemoveHead(value: List[String]): Unit = {
     linkedDeque.removeHead
     render(value)
   }
 
-  override def onClickRemoveLast(value: Int): Unit = {
+  override def onClickRemoveLast(value: List[String]): Unit = {
     linkedDeque.removeLast
     render(value)
   }
@@ -50,5 +50,15 @@ class ScalaController extends Controller {
         e.printStackTrace()
     }
     return -1
+  }
+
+  def safe(callable: () => List[String]): List[String] = {
+    try
+      return callable()
+    catch {
+      case e: Exception =>
+        e.printStackTrace()
+    }
+    return List[String]()
   }
 }

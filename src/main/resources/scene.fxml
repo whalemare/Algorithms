@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ru.whalemare.dev.trpo.lab2.LinkedDequeView">
+            fx:controller="ru.whalemare.dev.trpo.lab2.HeaderLinkedListView">
     <children>
         <Button fx:id="buttonAddHead" layoutX="309.0" layoutY="325.0" mnemonicParsing="false" prefHeight="27.0"
                 prefWidth="133.0" text="Add Head"/>

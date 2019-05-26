@@ -5,11 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-/**
- * @author Mikhail Medvedev
- * @since 2019
- */
-public class LinkedDequeView implements Controller.Renderable {
+import java.util.Arrays;
+import java.util.List;
+
+public class HeaderLinkedListView implements Controller.Renderable {
 
     @FXML
     private Button buttonAddHead;
@@ -32,10 +31,12 @@ public class LinkedDequeView implements Controller.Renderable {
     @FXML
     private TextArea textOutputInfo;
 
-    public static Controller controller;
+    public static Controller<List<String>> controller;
 
-    private int getValue() {
-        return Integer.valueOf(editField.getCharacters().toString());
+    private List<String> getValue() {
+        String raw = editField.getCharacters().toString();
+        List<String> items = Arrays.asList(raw.split(" "));
+        return items;
     }
 
     @FXML

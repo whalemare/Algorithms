@@ -1,15 +1,15 @@
 package ru.whalemare.dev.trpo.lab2;
 
-public interface Controller {
+public interface Controller<Item> {
     void onRender(Renderable renderable);
 
-    void onClickAddHead(int value);
+    void onClickAddHead(Item value);
 
-    void onClickAddLast(int value);
+    void onClickAddLast(Item value);
 
-    void onClickRemoveHead(int value);
+    void onClickRemoveHead(Item value);
 
-    void onClickRemoveLast(int value);
+    void onClickRemoveLast(Item value);
 
     interface Renderable {
         void render(String main, String additional);

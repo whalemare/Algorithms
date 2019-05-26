@@ -5,8 +5,6 @@ import java.util.NoSuchElementException;
 
 /**
  * Implementing of single linked list that represent a head-in-head-out
- *
- * @author Mikhail Medvedev
  */
 public class LinkedDeque<Item> implements Iterable<Item> {
     private int size;

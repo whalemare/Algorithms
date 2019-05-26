@@ -3,10 +3,6 @@ import org.scalatest._
 import org.scalatest.junit.JUnitRunner
 import ru.whalemare.dev.trpo.lab3.LinkedDequeScala
 
-/**
-  * @since 2019
-  * @author Mikhail Medvedev
-  */
 @RunWith(classOf[JUnitRunner])
 class LinkedDequeScalaTest extends FlatSpec {
 

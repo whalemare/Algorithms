@@ -5,10 +5,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import ru.whalemare.dev.trpo.lab1.LinkedDeque;
 
-/**
- * @author Mikhail Medvedev
- * @since 2019
- */
 @RunWith(JUnit4.class)
 public class TestLinkedQueue {
 
