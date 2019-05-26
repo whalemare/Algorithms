@@ -20,7 +20,7 @@
         <Button fx:id="buttonRemoveLast" layoutX="453.0" layoutY="359.0" mnemonicParsing="false" prefHeight="27.0"
                 prefWidth="133.0" text="Remove Last"/>
         <TextField fx:id="editField" layoutX="309.0" layoutY="270.0" prefHeight="27.0" prefWidth="182.0"/>
-        <Label layoutX="309.0" layoutY="245.0" prefHeight="17.0" prefWidth="182.0" text="Введите число"/>
+        <Label layoutX="309.0" layoutY="245.0" prefHeight="17.0" prefWidth="182.0" text="Напишите предложение"/>
         <TextArea fx:id="textOutputInfo" editable="false" layoutX="18.0" layoutY="233.0" prefHeight="92.0"
                   prefWidth="200.0"/>
         <Label layoutX="18.0" layoutY="210.0" prefHeight="17.0" prefWidth="94.0" text="Информация"/>
